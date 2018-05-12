@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# dockerdeb
-# Setup for Docker in Debian.
+# awscli
+# Setup for AWS CLI in Debian.
 #
 # Copyright (c) 2018, Matheson Ventures Pte Ltd
 #
@@ -19,4 +19,10 @@ CMD ["/bin/bash"]
 COPY setup.sh /tmp
 RUN /tmp/setup.sh
 RUN rm /tmp/setup.sh
+
+
+wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+
+pip install awscli --upgrade --user
 
