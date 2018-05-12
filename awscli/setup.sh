@@ -12,15 +12,6 @@
 # work, Matheson Ventures Pte Ltd.  If you infringe our copyright, you
 # render yourself liable for prosecution.
 
-FROM mv/basedeb:latest
-
-CMD ["/bin/bash"]
-
-COPY setup.sh /tmp
-RUN /tmp/setup.sh
-RUN rm /tmp/setup.sh
-
-
 wget https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
 

@@ -18,7 +18,6 @@ apt-get update; apt-get upgrade; apt-get install -y \
 	git \
 	nmap \
 	openssh-client \
-	python \
 	tmux \
 	vim \
 	wget
