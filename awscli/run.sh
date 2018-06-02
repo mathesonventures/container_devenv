@@ -18,7 +18,7 @@
 prefix=`cat container_prefix`
 name=`cat container_name`
 containerName=$prefix/$name
-instanceName=$name-prod
+instanceName=${name//\//_}-prod
 
 sudo docker run -it --rm \
 	--name $instanceName \

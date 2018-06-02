@@ -15,9 +15,7 @@
 # You should have received a copy of the GNU General Public License along with
 # this software.  If not, see http://www.gnu.org/licenses/gpl-2.0.html
 
-apt-get update
-
-apt-get install -y software-properties-common
+apt-get update; apt-get install -y software-properties-common
 
 add-apt-repository "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main"
 

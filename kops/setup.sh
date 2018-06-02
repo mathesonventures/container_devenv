@@ -15,6 +15,10 @@
 # You should have received a copy of the GNU General Public License along with
 # this software.  If not, see http://www.gnu.org/licenses/gpl-2.0.html
 
+# Pre-requisites
+apt-get update; apt-get install -y \
+	wget
+
 # kubectl
 wget -O kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 chmod +x ./kubectl

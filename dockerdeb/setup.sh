@@ -16,11 +16,11 @@
 # this software.  If not, see http://www.gnu.org/licenses/gpl-2.0.html
 
 apt-get install -y \
-		apt-transport-https \
-		ca-certificates \
-		curl \
-		gnupg2 \
-		software-properties-common
+	apt-transport-https \
+	ca-certificates \
+	curl \
+	gnupg2 \
+	software-properties-common
 
 curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 
