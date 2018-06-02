@@ -8,6 +8,14 @@ cd jdk8
 ./build.sh
 cd ..
 
+cd nodejs8
+./build.sh
+cd ..
+
+cd nodejs10
+./build.sh
+cd ..
+
 cd dockerdeb
 ./build.sh
 cd ..

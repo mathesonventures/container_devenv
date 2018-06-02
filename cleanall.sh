@@ -12,6 +12,14 @@ cd dockerdeb
 ./rmi.sh
 cd ..
 
+cd nodejs10
+./rmi.sh
+cd ..
+
+cd nodejs8
+./rmi.sh
+cd ..
+
 cd jdk8
 ./rmi.sh
 cd ..
