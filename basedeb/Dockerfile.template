@@ -1,0 +1,6 @@
+FROM debian:8.8
+
+SETUP
+
+CMD ["/bin/bash"]
+

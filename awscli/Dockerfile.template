@@ -14,9 +14,7 @@
 
 FROM mv/dockerdeb:latest
 
-COPY setup.sh /tmp
-RUN /tmp/setup.sh
-RUN rm /tmp/setup.sh
+SETUP
 
 ENV PATH="${PATH}:/root/.local/bin"
 
