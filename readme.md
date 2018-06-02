@@ -2,13 +2,17 @@
 
 ## Introduction
 
-### About
+This project packages up a the following common dev tools so that they can be easily used in a portable and hassle-free fashion:
 
-This project packages up a number of common dev tools so that they can be easily used in a portable and hassle-free fashion.
+- JDK8
+- NodeJS 8
+- NodeJS 10
+- AWS CLI
+- Kubernetes Operations - kops
 
-The primary vehicle for delivering these dev tools is Docker - each tools is packaged as a Docker image that can be run almost anywhere.
+The primary vehicle for delivering these dev tools is Docker - each tools is packaged as a Docker image that can be run almost anywhere.  Additionally the setup scripts for each tool can be applied to other compatible base environments.
 
-Additionally the scripts for setting up each tool can be run on other compatible base environments.
+## About
 
 ### Project
 
