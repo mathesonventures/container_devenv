@@ -130,6 +130,62 @@ Java(TM) SE Runtime Environment (build 1.8.0_171-b11)
 Java HotSpot(TM) 64-Bit Server VM (build 25.171-b11, mixed mode)
 ```
 
+### nodejs8
+
+The `nodejs8` Docker images is based on `basedeb` and adds into it the NodeJS package including npm.
+
+Example build:
+
+```
+cd nodejs8
+./build.sh
+
+Sending build context to Docker daemon   16.9kB
+Step 1/4 : FROM mv/devtools/basedeb:latest
+
+...
+
+Successfully tagged mv/devtools/nodejs8:latest
+```
+
+Example run:
+
+```
+cd nodejs8
+./run.sh
+
+root@500780e8fc42:/# npm -version
+5.6.0
+```
+
+### nodejs10
+
+The `nodejs10` Docker images is based on `basedeb` and adds into it the NodeJS package including npm.
+
+Example build:
+
+```
+cd nodejs10
+./build.sh
+
+Sending build context to Docker daemon   16.9kB
+Step 1/4 : FROM mv/devtools/basedeb:latest
+
+...
+
+Successfully tagged mv/devtools/nodejs10:latest
+```
+
+Example run:
+
+```
+cd nodejs10
+./run.sh
+
+root@29dda0bdb27c:/# npm -version
+6.1.0
+```
+
 ### dockerdeb
 
 The `dockerdeb` Docker image is based on `basedeb` and installs the Docker tools into the image.
