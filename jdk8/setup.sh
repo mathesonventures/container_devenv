@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Containerized Dev Tools
 # Copyright © 2018, Matheson Ventures Pte Ltd
 #
@@ -13,11 +15,17 @@
 # You should have received a copy of the GNU General Public License along with
 # this software.  If not, see http://www.gnu.org/licenses/gpl-2.0.html
 
-$prefix = Get-Content container_prefix
-$name = Get-Content container_name
-$containerName = "$prefix/$name"
-$instanceName = "$($name)-prod"
+apt-get update; apt-get install -y software-properties-common
 
-docker stop $instanceName
-docker rm $instanceName
+add-apt-repository "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main"
+
+apt-get update
+
+echo debconf shared/accepted-oracle-license-v1-1 select true | \
+  debconf-set-selections
+
+echo debconf shared/accepted-oracle-license-v1-1 seen true | \
+  debconf-set-selections
+
+apt-get install -y --allow-unauthenticated oracle-java8-installer
 

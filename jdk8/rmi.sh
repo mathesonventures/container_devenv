@@ -15,11 +15,5 @@
 # You should have received a copy of the GNU General Public License along with
 # this software.  If not, see http://www.gnu.org/licenses/gpl-2.0.html
 
-prefix=`cat container_prefix`
-name=`cat container_name`
-containerName=$prefix/$name
-instanceName=$name-prod
-
-sudo docker stop $instanceName
-sudo docker rm $instanceName
+../_template/rmi.sh
 

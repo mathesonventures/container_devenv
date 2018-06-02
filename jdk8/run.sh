@@ -15,11 +15,13 @@
 # You should have received a copy of the GNU General Public License along with
 # this software.  If not, see http://www.gnu.org/licenses/gpl-2.0.html
 
-FROM mv/dockerdeb:latest
+prefix=`cat container_prefix`
+name=`cat container_name`
+containerName=$prefix/$name
+instanceName=${name//\//_}-prod
 
-COPY setup.sh /tmp
-RUN /tmp/setup.sh
-RUN rm /tmp/setup.sh
-
-ENV PATH="${PATH}:/root/.local/bin"
+sudo docker run -it --rm \
+	--name $instanceName \
+        --mount source=wrk,target=/dat/wrk \
+	$containerName
 
