@@ -63,6 +63,17 @@ Note that the build script will generate the Dockerfile from Dockerfile.template
 
 ## Running Dev Tools via Docker
 
+### Image Dependency Overview
+
+The images defined in this project have dependencies that you need to follow when building up the images from scratch.  Read this table from left to right to follow the dependencies:
+
+| L1      | L2        | L3     | L4   |
+| ------- | --------- | ------ | ---- |
+| basedeb | jdk8      |        |      |
+|         | nodejs8   |        |      |
+|         | nodejs10  |        |      |
+|         | dockerdeb | awscli | kops |
+
 ### basedeb
 
 The `basedeb` tool is just the library/debian image from Docker Hub with a number of commonly required dev tools installed - specifically:
