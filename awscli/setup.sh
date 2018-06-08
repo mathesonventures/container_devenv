@@ -16,11 +16,12 @@
 # this software.  If not, see http://www.gnu.org/licenses/gpl-2.0.html
 
 # Pre-requisites
-apt-get update; apt-get install -y \
+apt-get update -y; apt-get upgrade -y;
+
+apt-get install -y \
 	wget
 
 wget https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
 
 pip install awscli --upgrade --user
-

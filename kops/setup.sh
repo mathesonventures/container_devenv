@@ -16,7 +16,9 @@
 # this software.  If not, see http://www.gnu.org/licenses/gpl-2.0.html
 
 # Pre-requisites
-apt-get update; apt-get install -y \
+apt-get update -y; apt-get upgrade -y;
+
+apt-get install -y \
 	wget
 
 # kubectl
@@ -28,4 +30,3 @@ mv ./kubectl /root/.local/bin/
 wget -O kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
 chmod +x ./kops
 mv ./kops /root/.local/bin/
-

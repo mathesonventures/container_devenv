@@ -2,13 +2,17 @@
 
 ## Introduction
 
-### About
+This project packages up a the following common dev tools so that they can be easily used in a portable and hassle-free fashion:
 
-This project packages up a number of common dev tools so that they can be easily used in a portable and hassle-free fashion.
+- JDK8
+- NodeJS 8
+- NodeJS 10
+- AWS CLI
+- Kubernetes Operations - kops
 
-The primary vehicle for delivering these dev tools is Docker - each tools is packaged as a Docker image that can be run almost anywhere.
+The primary vehicle for delivering these dev tools is Docker - each tools is packaged as a Docker image that can be run almost anywhere.  Additionally the setup scripts for each tool can be applied to other compatible base environments.
 
-Additionally the scripts for setting up each tool can be run on other compatible base environments.
+## About
 
 ### Project
 
@@ -58,6 +62,17 @@ Each tool is separated into its own directory, and for each tool you'll find the
 Note that the build script will generate the Dockerfile from Dockerfile.template with the setup.sh inlined into it as a series of RUN directives.  This approach allows Docker's layer mechanism to work properly: the image will be comprised of a layer for each command in setup.sh instead of just a single layer for running setup.sh
 
 ## Running Dev Tools via Docker
+
+### Image Dependency Overview
+
+The images defined in this project have dependencies that you need to follow when building up the images from scratch.  Read this table from left to right to follow the dependencies:
+
+| L1      | L2        | L3     | L4   |
+| ------- | --------- | ------ | ---- |
+| basedeb | jdk8      |        |      |
+|         | nodejs8   |        |      |
+|         | nodejs10  |        |      |
+|         | dockerdeb | awscli | kops |
 
 ### basedeb
 
