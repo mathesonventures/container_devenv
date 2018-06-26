@@ -1,5 +1,13 @@
 # Dev Tools
 
+## Project Goals
+
+Create a flexible and portable development environment that can be deployed:
+
+- In a Linux VM on ESXi / Hyper-V / Virtualbox / etc
+- On a disposable AWS EC2 Linux instance
+- Containerized on any environment supporting Docker (for Linux)
+
 ## Introduction
 
 This project packages up a the following common dev tools so that they can be easily used in a portable and hassle-free fashion:
