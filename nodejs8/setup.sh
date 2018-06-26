@@ -19,10 +19,11 @@
 # https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
 
 # Pre-requisites
-apt-get update; apt-get install -y \
+apt-get update -y; apt-get upgrade -y;
+
+apt-get install -y \
 	curl
 
 curl -sL https://deb.nodesource.com/setup_8.x | bash -
 
 apt-get install -y nodejs
-

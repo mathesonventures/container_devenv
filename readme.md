@@ -1,5 +1,13 @@
 # Dev Tools
 
+## Project Goals
+
+Create a flexible and portable development environment that can be deployed:
+
+- In a Linux VM on ESXi / Hyper-V / Virtualbox / etc
+- On a disposable AWS EC2 Linux instance
+- Containerized on any environment supporting Docker (for Linux)
+
 ## Introduction
 
 This project packages up a the following common dev tools so that they can be easily used in a portable and hassle-free fashion:
@@ -62,6 +70,17 @@ Each tool is separated into its own directory, and for each tool you'll find the
 Note that the build script will generate the Dockerfile from Dockerfile.template with the setup.sh inlined into it as a series of RUN directives.  This approach allows Docker's layer mechanism to work properly: the image will be comprised of a layer for each command in setup.sh instead of just a single layer for running setup.sh
 
 ## Running Dev Tools via Docker
+
+### Image Dependency Overview
+
+The images defined in this project have dependencies that you need to follow when building up the images from scratch.  Read this table from left to right to follow the dependencies:
+
+| L1      | L2        | L3     | L4   |
+| ------- | --------- | ------ | ---- |
+| basedeb | jdk8      |        |      |
+|         | nodejs8   |        |      |
+|         | nodejs10  |        |      |
+|         | dockerdeb | awscli | kops |
 
 ### basedeb
 

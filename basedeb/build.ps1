@@ -13,9 +13,4 @@
 # You should have received a copy of the GNU General Public License along with
 # this software.  If not, see http://www.gnu.org/licenses/gpl-2.0.html
 
-$prefix = Get-Content container_prefix
-$name = Get-Content container_name
-$containerName = "$prefix/$name"
-
-docker build -t $containerName .
-
+& ..\_template\build.ps1

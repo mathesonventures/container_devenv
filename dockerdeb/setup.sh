@@ -15,6 +15,9 @@
 # You should have received a copy of the GNU General Public License along with
 # this software.  If not, see http://www.gnu.org/licenses/gpl-2.0.html
 
+# Pre-requisites
+apt-get update -y; apt-get upgrade -y;
+
 apt-get install -y \
 	apt-transport-https \
 	ca-certificates \
@@ -30,4 +33,3 @@ add-apt-repository \
 	stable"
 
 apt-get update -y; apt-get install -y docker-ce;
-

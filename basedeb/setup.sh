@@ -15,7 +15,12 @@
 # You should have received a copy of the GNU General Public License along with
 # this software.  If not, see http://www.gnu.org/licenses/gpl-2.0.html
 
-apt-get update; apt-get upgrade; apt-get install -y \
+# Pre-requisites
+echo 'Acquire::http { Proxy "http://192.168.2.5:3142"; }' >> /etc/apt/apt.conf.d/proxy; \
+	apt-get update -y; \
+	apt-get upgrade -y;
+
+apt-get install -y \
 	curl \
 	dnsutils \
 	git \
@@ -24,4 +29,3 @@ apt-get update; apt-get upgrade; apt-get install -y \
 	tmux \
 	vim \
 	wget
-
