@@ -75,12 +75,13 @@ Note that the build script will generate the Dockerfile from Dockerfile.template
 
 The images defined in this project have dependencies that you need to follow when building up the images from scratch.  Read this table from left to right to follow the dependencies:
 
-| L1      | L2        | L3     | L4   |
-| ------- | --------- | ------ | ---- |
-| basedeb | jdk8      |        |      |
-|         | nodejs8   |        |      |
-|         | nodejs10  |        |      |
-|         | dockerdeb | awscli | kops |
+| L1      | L2        | L3     | L4        |
+| ------- | --------- | ------ | --------- |
+| basedeb | jdk8      |        |           |
+|         | nodejs8   |        |           |
+|         | nodejs10  |        |           |
+|         | dockerdeb | awscli | kops      |
+|         |           |        | terraform |
 
 ### basedeb
 
@@ -319,5 +320,36 @@ cd kops
 
 root@6db6fff6219b:/# kops version
 Version 1.9.1 (git-ba77c9ca2)
+```
+
+### terraform
+
+The `terraform` Docker images is based on `awscli` and downloads and installs Terraform from the official distribution site.
+
+Example build:
+
+```
+cd terraform
+./build.sh
+
+Sending build context to Docker daemon  17.92kB
+Step 1/7 : FROM mv/devtools/awscli:latest
+ ---> 394ca37f0937
+ 
+ ...
+ 
+ Successfully tagged mv/devtools/terraform:latest
+```
+
+Example run:
+
+```
+cd terraform
+./run.sh
+
+root@61c4b3dee460:/# terraform version
+Terraform v0.11.8
+
+root@61c4b3dee460:/#
 ```
 
