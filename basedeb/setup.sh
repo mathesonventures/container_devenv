@@ -16,7 +16,7 @@
 # this software.  If not, see http://www.gnu.org/licenses/gpl-2.0.html
 
 # Pre-requisites
-echo 'Acquire::http { Proxy "http://192.168.2.5:3142"; }' >> /etc/apt/apt.conf.d/proxy; \
+#echo 'Acquire::http { Proxy "http://192.168.2.5:3142"; }' >> /etc/apt/apt.conf.d/proxy; \
 	apt-get update -y; \
 	apt-get upgrade -y;
 
@@ -24,8 +24,11 @@ apt-get install -y \
 	curl \
 	dnsutils \
 	git \
+	mosh \
 	nmap \
 	openssh-client \
 	tmux \
 	vim \
 	wget
+
+locale-gen
