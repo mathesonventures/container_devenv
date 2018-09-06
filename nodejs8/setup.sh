@@ -22,7 +22,8 @@
 apt-get update -y; apt-get upgrade -y;
 
 apt-get install -y \
-	curl
+	curl \
+	gnupg2;
 
 curl -sL https://deb.nodesource.com/setup_8.x | bash -
 
