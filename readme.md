@@ -16,7 +16,9 @@ This project packages up a the following common dev tools so that they can be ea
 - NodeJS 8
 - NodeJS 10
 - AWS CLI
-- Kubernetes Operations - kops
+- Kubernetes: kubectl and kops
+- Helm
+- Terraform
 
 The primary vehicle for delivering these dev tools is Docker - each tools is packaged as a Docker image that can be run almost anywhere.  Additionally the setup scripts for each tool can be applied to other compatible base environments.
 

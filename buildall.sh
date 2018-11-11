@@ -28,3 +28,10 @@ cd kops
 ./build.sh
 cd ..
 
+cd helm
+./build.sh
+cd ..
+
+cd terraform
+./build.sh
+cd ..

@@ -1,5 +1,13 @@
 #!/bin/bash
 
+cd terraform
+./rmi.sh
+cd ..
+
+cd helm
+./rmi.sh
+cd ..
+
 cd kops
 ./rmi.sh
 cd ..
@@ -27,4 +35,3 @@ cd ..
 cd basedeb
 ./rmi.sh
 cd ..
-

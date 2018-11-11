@@ -3,6 +3,10 @@ cd terraform
 ./rmi.ps1
 cd ..
 
+cd helm
+./rmi.ps1
+cd ..
+
 cd kops
 ./rmi.ps1
 cd ..

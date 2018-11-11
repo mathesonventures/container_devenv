@@ -27,6 +27,10 @@ cd kops
 ./build.ps1
 cd ..
 
+cd helm
+./build.ps1
+cd ..
+
 cd terraform
 ./build.ps1
 cd ..
