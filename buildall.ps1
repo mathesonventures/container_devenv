@@ -1,37 +1,36 @@
-#!/bin/bash
 
 cd basedeb
-./build.sh
+./build.ps1
 cd ..
 
 cd jdk8
-./build.sh
+./build.ps1
 cd ..
 
 cd nodejs8
-./build.sh
+./build.ps1
 cd ..
 
 cd nodejs10
-./build.sh
+./build.ps1
 cd ..
 
 cd dockerdeb
-./build.sh
+./build.ps1
 cd ..
 
 cd awscli
-./build.sh
+./build.ps1
 cd ..
 
 cd kops
-./build.sh
+./build.ps1
 cd ..
 
 cd helm
-./build.sh
+./build.ps1
 cd ..
 
 cd terraform
-./build.sh
+./build.ps1
 cd ..

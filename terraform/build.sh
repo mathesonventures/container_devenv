@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Containerized Dev Tools
 # Copyright © 2018, Matheson Ventures Pte Ltd
 #
@@ -13,14 +15,5 @@
 # You should have received a copy of the GNU General Public License along with
 # this software.  If not, see http://www.gnu.org/licenses/gpl-2.0.html
 
-$prefix = Get-Content container_prefix
-$name = Get-Content container_name
-$containerName = "$prefix/$name"
-$instanceName = "$($name -replace '/', '_')-prod"
+../_template/build.sh
 
-docker run -it --rm `
-	--name $instanceName `
-	--mount source=wrk,target=/dat/wrk `
-	--mount source=awscli,target=/root/.aws `
-	-v /var/run/docker.sock:/var/run/docker.sock `
-	$containerName

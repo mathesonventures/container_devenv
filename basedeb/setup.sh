@@ -16,7 +16,7 @@
 # this software.  If not, see http://www.gnu.org/licenses/gpl-2.0.html
 
 # Pre-requisites
-echo 'Acquire::http { Proxy "http://192.168.2.5:3142"; }' >> /etc/apt/apt.conf.d/proxy; \
+#echo 'Acquire::http { Proxy "http://192.168.2.5:3142"; }' >> /etc/apt/apt.conf.d/proxy; \
 	apt-get update -y; \
 	apt-get upgrade -y;
 
@@ -24,8 +24,14 @@ apt-get install -y \
 	curl \
 	dnsutils \
 	git \
+	locales \
+	mosh \
 	nmap \
 	openssh-client \
 	tmux \
 	vim \
 	wget
+
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+locale-gen en_US.UTF-8

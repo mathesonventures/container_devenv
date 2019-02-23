@@ -1,37 +1,36 @@
-#!/bin/bash
 
 cd terraform
-./rmi.sh
+./rmi.ps1
 cd ..
 
 cd helm
-./rmi.sh
+./rmi.ps1
 cd ..
 
 cd kops
-./rmi.sh
+./rmi.ps1
 cd ..
 
 cd awscli
-./rmi.sh
+./rmi.ps1
 cd ..
 
 cd dockerdeb
-./rmi.sh
+./rmi.ps1
 cd ..
 
 cd nodejs10
-./rmi.sh
+./rmi.ps1
 cd ..
 
 cd nodejs8
-./rmi.sh
+./rmi.ps1
 cd ..
 
 cd jdk8
-./rmi.sh
+./rmi.ps1
 cd ..
 
 cd basedeb
-./rmi.sh
+./rmi.ps1
 cd ..
