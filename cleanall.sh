@@ -4,11 +4,7 @@ cd terraform
 ./rmi.sh
 cd ..
 
-cd helm
-./rmi.sh
-cd ..
-
-cd kops
+cd k8s
 ./rmi.sh
 cd ..
 
@@ -33,5 +29,9 @@ cd jdk8
 cd ..
 
 cd basedeb
+./rmi.sh
+cd ..
+
+cd jekyll
 ./rmi.sh
 cd ..

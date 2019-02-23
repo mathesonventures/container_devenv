@@ -24,14 +24,14 @@ cd awscli
 ./build.sh
 cd ..
 
-cd kops
-./build.sh
-cd ..
-
-cd helm
+cd k8s
 ./build.sh
 cd ..
 
 cd terraform
+./build.sh
+cd ..
+
+cd jekyll
 ./build.sh
 cd ..

@@ -23,14 +23,14 @@ cd awscli
 ./build.ps1
 cd ..
 
-cd kops
-./build.ps1
-cd ..
-
-cd helm
+cd k8s
 ./build.ps1
 cd ..
 
 cd terraform
+./build.ps1
+cd ..
+
+cd jekyll
 ./build.ps1
 cd ..
