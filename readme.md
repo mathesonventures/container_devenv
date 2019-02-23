@@ -18,6 +18,7 @@ This project packages up a the following common dev tools so that they can be ea
 - AWS CLI
 - Kubernetes: kubectl, kops and helm
 - Terraform
+- Jekyll
 
 The primary vehicle for delivering these dev tools is Docker - each tools is packaged as a Docker image that can be run almost anywhere.  Additionally the setup scripts for each tool can be applied to other compatible base environments.
 
