@@ -28,9 +28,10 @@ cd k8s
 ./build.sh
 cd ..
 
+cd terraform
 ./build.sh
 cd ..
 
-cd terraform
+cd jekyll
 ./build.sh
 cd ..

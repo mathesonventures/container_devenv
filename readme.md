@@ -35,7 +35,7 @@ This project is offered to you under the terms of the GNU GPLv2 free software li
 
 You can use the tools bundled in this project in three easy steps: Clone; Build; Run;
 
-```
+```bash
 # Clone
 $ git clone https://github.com/mathesonventures/devtools.git
 $ cd devtools
@@ -50,7 +50,7 @@ $ ./run.sh
 
 This will bring you into a container running interactively where you can now use the tool - for example using javac from JDK8
 
-```
+```bash
 root@1696754a76f7:/# javac -version
 javac 1.8.0_171
 root@1696754a76f7:/#
@@ -83,6 +83,7 @@ The images defined in this project have dependencies that you need to follow whe
 |         | nodejs10  |        |           |
 |         | dockerdeb | awscli | k8s       |
 |         |           |        | terraform |
+|         | jekyll    |        |           |
 
 ### basedeb
 
@@ -99,7 +100,7 @@ The `basedeb` tool is just the library/debian image from Docker Hub with a numbe
 
 Example build:
 
-```
+```bash
 cd basedeb
 ./build.sh
 
@@ -114,7 +115,7 @@ Successfully tagged mv/devtools/basedeb:latest
 
 Example run:
 
-```
+```bash
 cd basedeb
 ./run.sh
 
@@ -128,7 +129,7 @@ The `jdk8` Docker image is based on `basedeb` and adds into it the Oracle Java J
 
 Example build:
 
-```
+```bash
 cd jdk8
 ./build.sh
 
@@ -143,7 +144,7 @@ Successfully tagged mv/devtools/jdk8:latest
 
 Example run:
 
-```
+```bash
 cd jdk8
 ./run.sh
 
@@ -161,7 +162,7 @@ The `nodejs8` Docker images is based on `basedeb` and adds into it the NodeJS pa
 
 Example build:
 
-```
+```bash
 cd nodejs8
 ./build.sh
 
@@ -175,7 +176,7 @@ Successfully tagged mv/devtools/nodejs8:latest
 
 Example run:
 
-```
+```bash
 cd nodejs8
 ./run.sh
 
@@ -189,7 +190,7 @@ The `nodejs10` Docker images is based on `basedeb` and adds into it the NodeJS p
 
 Example build:
 
-```
+```bash
 cd nodejs10
 ./build.sh
 
@@ -203,7 +204,7 @@ Successfully tagged mv/devtools/nodejs10:latest
 
 Example run:
 
-```
+```bash
 cd nodejs10
 ./run.sh
 
@@ -219,7 +220,7 @@ The run script for this tool mounts the host's Docker socket into the container 
 
 Example build:
 
-```
+```bash
 cd dockerdeb
 ./build.sh
 
@@ -234,7 +235,7 @@ Successfully tagged mv/devtools/dockerdeb:latest
 
 Example run:
 
-```
+```bash
 cd dockerdeb
 ./run.sh
 
@@ -268,7 +269,7 @@ Note that at the moment this image is based on `dockerdeb` even though you don't
 
 Example build:
 
-```
+```bash
 cd awscli
 ./build.sh
 
@@ -283,7 +284,7 @@ Successfully tagged mv/devtools/awscli:latest
 
 Example run:
 
-```
+```bash
 cd awscli
 ./run.sh
 
@@ -300,7 +301,7 @@ The `k8s` Docker image is based on `awscli` and adds kubectl, the Kubernetes Ope
 
 Example build:
 
-```
+```bash
 cd k8s
 ./build.sh
 
@@ -315,7 +316,7 @@ Successfully tagged mv/devtools/k8s:latest
 
 Example run:
 
-```
+```bash
 cd k8s
 ./run.sh
 
@@ -332,11 +333,11 @@ Client: &version.Version{SemVer:"v2.9.1", GitCommit:"20adb27c7c5868466912eebdf66
 
 ### terraform
 
-The `terraform` Docker images is based on `awscli` and downloads and installs Terraform from the official distribution site.
+The `terraform` Docker image is based on `awscli` and downloads and installs Terraform from the official distribution site.
 
 Example build:
 
-```
+```bash
 cd terraform
 ./build.sh
 
@@ -351,7 +352,7 @@ Step 1/7 : FROM mv/devtools/awscli:latest
 
 Example run:
 
-```
+```bash
 cd terraform
 ./run.sh
 
@@ -359,5 +360,24 @@ root@61c4b3dee460:/# terraform version
 Terraform v0.11.8
 
 root@61c4b3dee460:/#
+```
+
+### jekyll
+
+The `jekyll` Docker image is based on `basedeb` and downloads and installs Jekyll (the static blog engine) and it's dependencies.
+
+Example build
+
+```bash
+cd jekyll
+./build.sh
+
+Sending build context to Docker daemon  17.92kB
+Step 1/7 : FROM mv/devtools/jekyll:latest
+ ---> 394ca37f0937
+ 
+ ...
+ 
+ Successfully tagged mv/devtools/jekyll:latest
 ```
 

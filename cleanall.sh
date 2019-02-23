@@ -31,3 +31,7 @@ cd ..
 cd basedeb
 ./rmi.sh
 cd ..
+
+cd jekyll
+./rmi.sh
+cd ..

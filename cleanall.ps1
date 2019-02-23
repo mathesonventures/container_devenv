@@ -30,3 +30,7 @@ cd ..
 cd basedeb
 ./rmi.ps1
 cd ..
+
+cd jekyll
+./rmi.ps1
+cd ..
