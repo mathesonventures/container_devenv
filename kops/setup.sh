@@ -21,12 +21,15 @@ apt-get update -y; apt-get upgrade -y;
 apt-get install -y \
 	wget
 
-# kubectl
+# Get binaries.  We do this together and before other commands to increase the chance that these layers can be cached in
+# in case later commands are changed
 wget -O kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+wget -O kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
+
+# kubectl
 chmod +x ./kubectl
-mv ./kubectl ~/.local/bin/
+mv ./kubectl /usr/local/bin/
 
 # kops
-wget -O kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
 chmod +x ./kops
-mv ./kops ~/.local/bin/
+mv ./kops /usr/local/bin/

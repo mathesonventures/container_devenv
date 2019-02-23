@@ -27,3 +27,5 @@ wget https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
 
 pip install awscli --upgrade --user
+
+mv /root/.local/bin/aws /usr/local/bin
