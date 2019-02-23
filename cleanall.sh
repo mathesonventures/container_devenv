@@ -4,11 +4,7 @@ cd terraform
 ./rmi.sh
 cd ..
 
-cd helm
-./rmi.sh
-cd ..
-
-cd kops
+cd k8s
 ./rmi.sh
 cd ..
 

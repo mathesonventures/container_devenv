@@ -23,11 +23,10 @@ cd awscli
 ./build.ps1
 cd ..
 
-cd kops
+cd k8s
 ./build.ps1
 cd ..
 
-cd helm
 ./build.ps1
 cd ..
 

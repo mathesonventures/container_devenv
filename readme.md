@@ -16,8 +16,7 @@ This project packages up a the following common dev tools so that they can be ea
 - NodeJS 8
 - NodeJS 10
 - AWS CLI
-- Kubernetes: kubectl and kops
-- Helm
+- Kubernetes: kubectl, kops and helm
 - Terraform
 
 The primary vehicle for delivering these dev tools is Docker - each tools is packaged as a Docker image that can be run almost anywhere.  Additionally the setup scripts for each tool can be applied to other compatible base environments.
@@ -82,7 +81,7 @@ The images defined in this project have dependencies that you need to follow whe
 | basedeb | jdk8      |        |           |
 |         | nodejs8   |        |           |
 |         | nodejs10  |        |           |
-|         | dockerdeb | awscli | kops      |
+|         | dockerdeb | awscli | k8s       |
 |         |           |        | terraform |
 
 ### basedeb
@@ -265,7 +264,7 @@ Server:
 
 The `awscli` Docker image is based on `dockerdeb` and adds the AWS CLI tool.
 
-Note that at the moment this image is based on `dockerdeb` even though you don't necessarily need Docker when using AWS CLI.  This is because the `kops` tool requires both the `dockerdeb` layers and the `awscli` layers.  In the future we will improve this with a composition-based approach to building images to replace the linear dependency model currently in place.
+Note that at the moment this image is based on `dockerdeb` even though you don't necessarily need Docker when using AWS CLI.  This is because the `k8s` layer requires both the `dockerdeb` layers and the `awscli` layers.  In the future we will improve this with a composition-based approach to building images to replace the linear dependency model currently in place.
 
 Example build:
 
@@ -295,14 +294,14 @@ Default region name: ap-southeast-1
 Default output format [None]:
 ```
 
-### kops
+### k8s
 
-The `kops` Docker image is based on `awscli` and adds the Kubernetes Operations (kops) tool.
+The `k8s` Docker image is based on `awscli` and adds kubectl, the Kubernetes Operations (kops) tool as well as helm.
 
 Example build:
 
 ```
-cd kops
+cd k8s
 ./build.sh
 
 Sending build context to Docker daemon  18.43kB
@@ -311,17 +310,24 @@ Step 1/5 : FROM mv/devtools/awscli:latest
 
 ...
 
-Successfully tagged mv/devtools/kops:latest
+Successfully tagged mv/devtools/k8s:latest
 ```
 
 Example run:
 
 ```
-cd kops
+cd k8s
 ./run.sh
 
-root@6db6fff6219b:/# kops version
+root@eef3ad0207be:/# kubectl version
+Client Version: version.Info{Major:"1", Minor:"13", GitVersion:"v1.13.3", GitCommit:"721bfa751924da8d1680787490c54b9179b1fed0", GitTreeState:"clean", BuildDate:"2019-02-01T20:08:12Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+
+root@eef3ad0207be:/# kops version
 Version 1.9.1 (git-ba77c9ca2)
+
+root@eef3ad0207be:/# helm version
+Client: &version.Version{SemVer:"v2.9.1", GitCommit:"20adb27c7c5868466912eebdf6664e7390ebe710", GitTreeState:"clean"}
 ```
 
 ### terraform

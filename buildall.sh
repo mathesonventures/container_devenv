@@ -24,11 +24,10 @@ cd awscli
 ./build.sh
 cd ..
 
-cd kops
+cd k8s
 ./build.sh
 cd ..
 
-cd helm
 ./build.sh
 cd ..
 
